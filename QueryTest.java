@@ -28,6 +28,12 @@ public class QueryTest {
         // 2. Get result list
         // 3. Iterate through the result list and print out
         //
+
+        Query query = em.createQuery("SELECT m.title, COUNT(r.id) AS 'NumOfReviews' FROM Review r INNER JOIN Movie m ON r.movie_id = m.id GROUP BY m.title");
+        List results = query.getResultList();
+        for(Object obj : results) {
+                System.out.println(obj.toString());
+        }
         System.out.println();
         
         

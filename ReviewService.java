@@ -49,7 +49,7 @@ public class ReviewService {
     }
     
     public Collection<Review> findAllReviews(Movie mov) {
-    	Query query = em.createQuery("SELECT r FROM Review r WHERE r.movie_id="+mov.getId());
+    	Query query = em.createQuery("SELECT r FROM Review r WHERE r.movie_id='" + mov.getId() + "'");
         return (Collections<Review>) query.getResultList();
     }
     
