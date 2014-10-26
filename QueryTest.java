@@ -21,6 +21,7 @@ public class QueryTest {
         
         // count all reviews for each movie
         System.out.println("Review count: ");
+
         //
         // Task 3: your code here
         //
@@ -29,7 +30,7 @@ public class QueryTest {
         // 3. Iterate through the result list and print out
         //
 
-        Query query = em.createQuery("SELECT m.title, COUNT(r.id) AS 'NumOfReviews' FROM Review r INNER JOIN Movie m ON r.movie_id = m.id GROUP BY m.title");
+        Query query = em.createQuery("SELECT m.title, COUNT(r.id) FROM Review r INNER JOIN Movie m ON r.movie_id = m.id GROUP BY m.title");
         List results = query.getResultList();
         for(Object obj : results) {
                 System.out.println(obj.toString());
@@ -42,6 +43,13 @@ public class QueryTest {
         //
         // Task 3: your code here
         //        
+
+        Query queryB = em.createQuery("SELECT m.title, COUNT(r.id) FROM Review r INNER JOIN Movie m ON r.movie_id = m.id GROUP BY m.title HAVING COUNT(r.id) >= 3");
+        List resultsB = queryB.getResultList();
+        for(Object obj : results) {
+                Object[] arrB = (Object[]) obj;
+                System.out.println(arrB[0] + " " + arr[1]);
+        }
         System.out.println();
         
 		em.close();
