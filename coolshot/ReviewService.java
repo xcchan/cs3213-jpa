@@ -45,16 +45,16 @@ public class ReviewService {
 
     public Collection<Review> findAllReviews() {
         Query query = em.createQuery("SELECT r FROM Review r");
-        return (Collections<Review>) query.getResultList();
+        return (Collection<Review>) query.getResultList();
     }
     
     public Collection<Review> findAllReviews(Movie mov) {
-    	Query query = em.createQuery("SELECT r FROM Review r WHERE r.movie_id='" + mov.getId() + "'");
-        return (Collections<Review>) query.getResultList();
+    	Query query = em.createQuery("SELECT r FROM Review r WHERE r.movie.id='" + mov.getId() + "'");
+        return (Collection<Review>) query.getResultList();
     }
     
     public Collection<Review> findReviewsByTitle(String title) {
     	Query query = em.createQuery("SELECT r FROM Review r WHERE r.movie.title = '" + title + "'");
-        return (Collections<Review>) query.getResultList();
+        return (Collection<Review>) query.getResultList();
     }
 }
