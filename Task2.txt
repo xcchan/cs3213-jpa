@@ -1,0 +1,18 @@
+Task 2 Ans: 
+
+	'%' will get all the reviews from all movies to be displayed.
+
+Comments:
+
+	
+Suggestions:
+
+	
+Feedback:
+
+	
+
+Done by:
+
+	Edward Chan
+	Koh Zheng Kang
