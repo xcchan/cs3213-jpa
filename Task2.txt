@@ -1,18 +1,10 @@
-Task 2 Ans: 
+Task 2: 
+	Attackers may use JPQL injection attacks which is similar to SQL injection.
+	The string "' OR '1' LIKE '%" will get all the reviews from all movies to be displayed. The
+	JPQL string generated will be: 
 
-	'%' will get all the reviews from all movies to be displayed.
-
-Comments:
-
-	
-Suggestions:
-
-	
-Feedback:
-
-	
+		SELECT r FROM Review r WHERE r.movie.title = '' OR '1' LIKE '%' 
 
 Done by:
-
-	Edward Chan
-	Koh Zheng Kang
+Edward Chan (A0097865H)
+Koh Zheng Kang (A0097973H)
