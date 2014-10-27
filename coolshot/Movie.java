@@ -28,6 +28,12 @@ public class Movie {
 	public void setImgUrl(String imgUrl) { this.imgUrl = imgUrl; }
 	public Date getUpdatedDate() { return updatedDate; }
 	public void setUpdatedDate(Date updatedDate) { this.updatedDate = updatedDate; }
+        
+        @OneToMany(mappedBy="movie", // indicate the variable "movie" in the Review class 
+                cascade=CascadeType.PERSIST, // when movie is updated, 
+                orphanRemoval=true) // save/delete reviews accordingly 
+        private Collection<Review> reviews; 
+        public Collection<Review> getReviews() { return reviews; }
     
     public String toString() {
         return "Movie: " + "[" + id + "] " + title + ". Last update: " + updatedDate.toString();
