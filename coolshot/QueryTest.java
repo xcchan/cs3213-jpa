@@ -21,6 +21,7 @@ public class QueryTest {
         
         // count all reviews for each movie
         System.out.println("Review count: ");
+
         //
         // Task 3: your code here
         //
@@ -42,7 +43,7 @@ public class QueryTest {
         System.out.println("Movie with at least 3 reviews: ");
         //
         // Task 3: your code here
-        //        
+        //
         query = em.createQuery("SELECT m.title FROM Review r INNER JOIN r.movie m GROUP BY m.title HAVING COUNT(r.id) > 2");
         results = query.getResultList();
         for(Object obj : results) {
